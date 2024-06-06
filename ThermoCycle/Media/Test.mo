@@ -1163,22 +1163,19 @@ package Test "Test medium models"
     replaceable package ph = ExternalMedia.Media.CoolPropMedium (
         mediumName=fluidIdentifier,
         substanceNames={fluidIdentifier},
-        ThermoStates=Modelica.Media.Interfaces.Choices.IndependentVariables.ph)
-                                                                                          constrainedby
+        ThermoStates=Modelica.Media.Interfaces.Choices.IndependentVariables.ph)           constrainedby
       Modelica.Media.Interfaces.PartialMedium "Medium model";
 
     replaceable package dT = ExternalMedia.Media.CoolPropMedium (
         mediumName=fluidIdentifier,
         substanceNames={fluidIdentifier},
-        ThermoStates=Modelica.Media.Interfaces.Choices.IndependentVariables.dT)
-                                                                                          constrainedby
+        ThermoStates=Modelica.Media.Interfaces.Choices.IndependentVariables.dT)           constrainedby
       Modelica.Media.Interfaces.PartialMedium "Medium model";
 
     replaceable package ps = ExternalMedia.Media.CoolPropMedium (
         mediumName=fluidIdentifier,
         substanceNames={fluidIdentifier},
-        ThermoStates=Modelica.Media.Interfaces.Choices.IndependentVariables.ps)
-                                                                                          constrainedby
+        ThermoStates=Modelica.Media.Interfaces.Choices.IndependentVariables.ps)           constrainedby
       Modelica.Media.Interfaces.PartialMedium "Medium model";
 
        replaceable package hs = ExternalMedia.Media.CoolPropMedium (

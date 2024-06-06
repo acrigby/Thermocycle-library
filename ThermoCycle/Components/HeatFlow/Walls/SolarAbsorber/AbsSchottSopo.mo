@@ -5,7 +5,7 @@ model AbsSchottSopo
   Modelica.Blocks.Interfaces.RealInput v_wind
     annotation (Placement(transformation(extent={{-114,46},{-86,74}}),
         iconTransformation(extent={{-104,70},{-74,100}})));
-  Modelica.Blocks.Interfaces.RealInput Theta "In Radiants"
+  Modelica.Blocks.Interfaces.RealInput CosEff "In Radiants"
     annotation (Placement(transformation(extent={{-114,26},{-86,54}}),
         iconTransformation(extent={{-106,18},{-76,48}})));
   Modelica.Blocks.Interfaces.RealInput DNI
@@ -72,7 +72,7 @@ Real Eta_TOT "Total Average efficiency";
         iconTransformation(extent={{80,-10},{100,10}})));
 equation
 // Incidence angle modifier //
-IAM = Modelica.Math.cos(Theta);
+IAM = CosEff;
 
 //Geometries of the tube //
 assert(geometry.rext_t > geometry.rint_t, "External Radius must be greater than internal radius");

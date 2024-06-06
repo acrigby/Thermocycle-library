@@ -115,7 +115,7 @@ replaceable model FluidHeatTransferModel =
                                   annotation (Placement(transformation(
         extent={{-27.5,-31.5},{27.5,31.5}},
         rotation=90,
-        origin={44.5,23.5})));
+        origin={46.5,23.5})));
 public
   record SummaryBase
     replaceable Arrays T_profile;
@@ -163,7 +163,7 @@ for i in 1:Ns loop
       color={0,0,127},
       smooth=Smooth.None));
      connect(SolarAbsorber[i].wall_int, flow1DimInc[i].Wall_int) annotation (Line(
-      points={{12.1,21},{20.5,21},{20.5,23.5},{31.375,23.5}},
+      points={{12.1,21},{20.5,21},{20.5,23.5},{33.375,23.5}},
       color={255,0,0},
       smooth=Smooth.None));
   connect(Tamb, SolarAbsorber[i].Tamb) annotation (Line(
@@ -186,11 +186,11 @@ end for;
 end for;
 
   connect(OutFlow, flow1DimInc[Ns].OutFlow) annotation (Line(
-      points={{0,90},{44.2375,90},{44.2375,46.4167}},
+      points={{0,90},{46.2375,90},{46.2375,46.4167}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(InFlow, flow1DimInc[1].InFlow) annotation (Line(
-      points={{0,-90},{28,-90},{28,-86},{44.5,-86},{44.5,0.583333}},
+      points={{0,-90},{28,-90},{28,-86},{46.5,-86},{46.5,0.583333}},
       color={0,0,255},
       smooth=Smooth.None));
 

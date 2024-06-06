@@ -97,9 +97,9 @@ replaceable model FluidHeatTransferModel =
         iconTransformation(extent={{-16,-16},{16,16}},
         rotation=0,
         origin={-66,98})));
-  Modelica.Blocks.Interfaces.RealInput Theta
-    annotation (Placement(transformation(extent={{-100,10},{-60,50}}),
-        iconTransformation(extent={{-17,-17},{17,17}},
+  Modelica.Blocks.Interfaces.RealInput CosEff annotation (Placement(
+        transformation(extent={{-100,10},{-60,50}}), iconTransformation(
+        extent={{-17,-17},{17,17}},
         rotation=0,
         origin={-65,55})));
   Modelica.Blocks.Interfaces.RealInput Tamb
@@ -176,10 +176,10 @@ Q_tot = sum(flow1Dim[:].Q_tot) "Total power absorbed by the fluid";
 //
 
     for i in 1:Ns loop
-     connect(Theta, absorberSchott[i].Theta) annotation (Line(
-      points={{-80,30},{-42,30},{-42,28.61},{-22.29,28.61}},
-      color={0,0,127},
-      smooth=Smooth.None));
+    connect(CosEff, absorberSchott[i].CosEff) annotation (Line(
+        points={{-80,30},{-42,30},{-42,28.61},{-22.29,28.61}},
+        color={0,0,127},
+        smooth=Smooth.None));
            connect(v_wind, absorberSchott[i].v_wind) annotation (Line(
       points={{-84,78},{-36,78},{-36,37.45},{-21.91,37.45}},
       color={0,0,127},
@@ -237,7 +237,7 @@ end for;
         Text(
           extent={{-72,42},{-22,34}},
           lineColor={0,0,0},
-          textString="Theta[rad]"),
+          textString="CosEff"),
         Text(
           extent={{-60,92},{-28,76}},
           lineColor={0,0,0},

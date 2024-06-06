@@ -8,7 +8,7 @@ model Test_SolaFieldSchott
     redeclare
       ThermoCycle.Components.HeatFlow.Walls.SolarAbsorber.Geometry.Schott_SopoNova.Schott_2008_PTR70_Vacuum
       CollectorGeometry,
-    redeclare package Medium1 = ThermoCycle.Media.Water,
+    redeclare package Medium1 = Modelica.Media.Water.StandardWater,
     Ns=2,
     Tstart_inlet=298.15,
     Tstart_outlet=373.15,
@@ -16,12 +16,12 @@ model Test_SolaFieldSchott
     annotation (Placement(transformation(extent={{-34,-28},{8,42}})));
 
  ThermoCycle.Components.FluidFlow.Reservoirs.SourceMdot sourceMdot(Mdot_0=0.5,
-    redeclare package Medium = ThermoCycle.Media.Water,
+    redeclare package Medium = Modelica.Media.Water.StandardWater,
     p=1000000,
     T_0=353.15)
     annotation (Placement(transformation(extent={{-66,-70},{-46,-50}})));
  ThermoCycle.Components.FluidFlow.Reservoirs.SinkP sinkP(redeclare package
-      Medium = ThermoCycle.Media.Water, p0=1000000)
+      Medium = Modelica.Media.Water.StandardWater, p0=1000000)
     annotation (Placement(transformation(extent={{22,56},{42,76}})));
   Modelica.Blocks.Sources.Constant const(k=25 + 273.15)
     annotation (Placement(transformation(extent={{-94,-8},{-74,12}})));
@@ -48,7 +48,7 @@ equation
       points={{-71,58},{-56,58},{-56,34},{-30.7333,34},{-30.7333,35}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(const1.y, solarCollectorIncSchott.Theta) annotation (Line(
+  connect(const1.y, solarCollectorIncSchott.CosEff) annotation (Line(
       points={{-73,28},{-48,28},{-48,21.3182},{-30.5,21.3182}},
       color={0,0,127},
       smooth=Smooth.None));

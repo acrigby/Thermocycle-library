@@ -56,7 +56,7 @@ annotation (choicesAllMatching = true);
   parameter Boolean ComputeSat=false
     "Can be disabled if the flow is single-phase, or if saturation is passed as a parameter" annotation (Dialog(tab="Numerical options"));
   //Medium.SaturationProperties  sat_in(ddldp=0,ddvdp=0,dhldp=0,dhvdp=0,dTp=0,hl=0,hv=1E5,sigma=0,sl=0,sv=0,dl=0,dv=0,psat=0,Tsat=300);
-  Real[14] sat_in= {0,0,0,0,0,0,1E5,0,0,0,0,0,0,300};
+  Real[2] sat_in= {0,300};
   parameter Boolean steadystate=true
     "if true, sets the derivative of h (working fluids enthalpy in each cell) to zero during Initialization"
     annotation (Dialog(group="Initialization options", tab="Initialization"));
@@ -114,20 +114,8 @@ equation
     sat = Medium.setSat_p(p);
   else
     //sat = sat_in;
-    sat.ddldp = sat_in[1];
-    sat.ddvdp = sat_in[2];
-    sat.dhldp = sat_in[3];
-    sat.dhvdp = sat_in[4];
-    sat.dTp = sat_in[5];
-    sat.hl = sat_in[6];
-    sat.hv = sat_in[7];
-    sat.sigma = sat_in[8];
-    sat.sl = sat_in[9];
-    sat.sv = sat_in[10];
-    sat.dl = sat_in[11];
-    sat.dv = sat_in[12];
-    sat.psat = sat_in[13];
-    sat.Tsat = sat_in[14];
+    sat.psat = sat_in[1];
+    sat.Tsat = sat_in[2];
   end if;
 
   h_v = Medium.dewEnthalpy(sat);

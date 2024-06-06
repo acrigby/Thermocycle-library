@@ -1,7 +1,7 @@
 within ThermoCycle.Examples.TestComponents;
 model Test_SolaFieldSoltigua
 
-parameter Real VV;
+parameter Real VV=1;
 ThermoCycle.Components.Units.Solar.SolarField_Soltigua_Inc        solarCollectorIncSchott(
     Mdotnom=0.5,
     Ns=2,

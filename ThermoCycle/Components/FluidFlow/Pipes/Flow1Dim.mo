@@ -112,7 +112,7 @@ constrainedby
     each TT=TT,
     each steadystate=steadystate,
     hstart = hstart,
-    each sat_in= {sat.ddldp,sat.ddvdp,sat.dhldp,sat.dhvdp,sat.dTp,sat.hl,sat.hv,sat.sigma,sat.sl,sat.sv,sat.dl,sat.dv,sat.psat,sat.Tsat},
+    each sat_in= {sat.psat,sat.Tsat},
     each ComputeSat = false)
             annotation (Placement(transformation(extent={{-26,-56},{28,-12}})));
   Interfaces.HeatTransfer.ThermalPortConverter
